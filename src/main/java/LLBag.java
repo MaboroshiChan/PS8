@@ -108,5 +108,33 @@ public class LLBag implements Bag {
         sb += "}";
         return sb;
     }
+
+    public static void main(String[] args) {
+        LLBag lb = new LLBag();
+        lb.add(1);
+        lb.add(2);
+        lb.add(3);
+
+        for(int i = 0; i < lb.numItems() + 5; ++i) {
+            System.out.println(lb.contains(i));
+        }
+
+        System.out.println(lb);
+        for(int i = 0; i < 10; ++i) {
+            System.out.println(lb.grab());
+        }
+
+        LLBag empty_bag = new LLBag();
+        for(int i = 0; i < 5; ++i) {
+            System.out.println("It should print nothing");
+            System.out.println(empty_bag.contains(i));
+        }
+
+        System.out.println(lb);
+        for(int i = 0; i < 10; ++i) {
+            System.out.println("It should print nothing");
+            System.out.println(empty_bag.grab());
+        }
+    }
     
 }

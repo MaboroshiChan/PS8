@@ -60,11 +60,6 @@ public class LLList implements List {
         }
 
         length = initItems.length;
-        if (length == 0) {
-            last = head;
-        } else {
-            last = nextNode;
-        }
     }
 
     /*
@@ -104,11 +99,6 @@ public class LLList implements List {
      * If i == -1, it returns a reference to the dummy head node.
      */
     private Node getNode(int i) {
-
-        if (i == length - 1) {
-            return last; 
-        }
-
         Node trav = head;
         int travIndex = -1;
 
@@ -153,11 +143,6 @@ public class LLList implements List {
         prevNode.next = newNode;
 
         length++;
-
-        if (i == length - 1) {
-            last = newNode;
-        }
-    
         return true;
     }
 
@@ -180,11 +165,6 @@ public class LLList implements List {
         prevNode.next = prevNode.next.next;
 
         length--;
-
-        if (i == length) {
-            last = prevNode;
-        }
-        
         return removed;
     }
 
